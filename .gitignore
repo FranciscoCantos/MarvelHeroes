@@ -1,0 +1,19 @@
+
+### Marvel Heroes GitIgnore  ###
+
+## User settings
+xcuserdata/
+
+## Marvel API Keys
+MarvelApiKeys.swift
+
+### Xcode Patch ###
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+**/xcshareddata/WorkspaceSettings.xcsettings
+
+# CocoaPods
+Pods/
+*.xcworkspace
