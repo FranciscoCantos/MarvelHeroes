@@ -52,7 +52,7 @@ class CharactersPresenter: CharactersPresenterProtocol {
                 }
                 self?.view?.showCharacters(charactersViewModels)
             } else {
-                self?.view?.showError(errorMessage ?? "Unknown error description")
+                self?.view?.showError(errorMessage)
             }
         }
 
@@ -70,7 +70,7 @@ class CharactersPresenter: CharactersPresenterProtocol {
                 }
                 self?.view?.appendMoreCharacters(charactersViewModels)
             } else {
-                self?.view?.showError(errorMessage ?? "Unknown error description")
+                self?.view?.showError(errorMessage)
             }
         }
     }
@@ -88,7 +88,7 @@ class CharactersPresenter: CharactersPresenterProtocol {
                 }
                 self?.view?.showSearchedCharacters(characterViewModel)
             } else {
-                self?.view?.showError(errorMessage ?? "Unknown error description")
+                self?.view?.showError(errorMessage)
             }
         }
     }

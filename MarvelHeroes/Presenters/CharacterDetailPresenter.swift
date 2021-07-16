@@ -44,7 +44,7 @@ class CharacterDetailPresenter: CharacterDetailPresenterProtocol {
                 let viewModel = CharacterToCharacterDetailViewModelMapper(character).map()
                 self?.view?.showCharacter(viewModel)
             } else {
-                self?.view?.showError(errorMessage ?? "Unknown error description")
+                self?.view?.showError(errorMessage)
             }
         }
     }

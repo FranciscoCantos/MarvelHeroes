@@ -22,7 +22,6 @@ class GetCharactersInteractor: GetCharactersInteractorProtocol {
         self.repository = repository
     }
     
-    
     ///  Get characters from the Marvel API
     /// - Parameter completion: Retrieves characters
     func getCharacters(completion: @escaping GetCharactersCompletionBlock) {

@@ -13,7 +13,7 @@ protocol CharactersViewControllerProtocol: AnyObject, LoadingViewProtocol {
     func showCharacters(_ characters: [CharacterListViewModel])
     func showSearchedCharacters(_ characters: [CharacterListViewModel])
     func appendMoreCharacters(_ characters:[CharacterListViewModel])
-    func showError(_ errorMessage: String)
+    func showError(_ errorMessage: String?)
 }
 
 /// View that show a list with all the characters. User can scroll, search and navigate to more character details
@@ -143,12 +143,12 @@ extension CharactersViewController: CharactersViewControllerProtocol {
     
     /// Shows error view with message. User can cancel or retry
     /// - Parameter errorMessage: Error to show
-    func showError(_ errorMessage: String) {
+    func showError(_ errorMessage: String?) {
         charactersModel = []
         self.tableView.reloadData()
         
         let alertController = UIAlertController(title: "App Error",
-                                                message: errorMessage,
+                                                message: errorMessage ?? "Unknown error description",
                                                 preferredStyle: .alert)
         
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))

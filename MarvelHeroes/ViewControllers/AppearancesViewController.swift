@@ -11,7 +11,7 @@ import Gifu
 
 protocol AppearancesViewControllerProtocol: AnyObject, LoadingViewProtocol {
     func showAppearances(_ appearances: [AppearancesViewModel])
-    func showError(_ errorMessage: String)
+    func showError(_ errorMessage: String?)
 }
 
 /// View that show collection with all the appearances of a character. User can see image, title and decription
@@ -81,9 +81,9 @@ extension AppearancesViewController: AppearancesViewControllerProtocol {
     
     /// Shows error view with message. User can cancel or retry
     /// - Parameter errorMessage: Error to show
-    func showError(_ errorMessage: String) {
+    func showError(_ errorMessage: String?) {
         let alertController = UIAlertController(title: "App Error",
-                                                message: errorMessage,
+                                                message: errorMessage ?? "Unknown error description",
                                                 preferredStyle: .alert)
         
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: { action -> Void in

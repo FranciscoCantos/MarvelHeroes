@@ -11,7 +11,7 @@ import Gifu
 
 protocol CharacterDetailViewControllerProtocol: AnyObject, LoadingViewProtocol {
     func showCharacter(_ characterViewModel: CharacterDetailViewModel)
-    func showError(_ errorMessage: String)
+    func showError(_ errorMessage: String?)
 }
 
 /// View that show all the details of a character. User can see more details of the character (photo and description) and
@@ -120,9 +120,9 @@ extension CharacterDetailViewController: CharacterDetailViewControllerProtocol {
     
     /// Shows error view with message. User can cancel or retry
     /// - Parameter errorMessage: Error to show
-    func showError(_ errorMessage: String) {
+    func showError(_ errorMessage: String?) {
         let alertController = UIAlertController(title: "App Error",
-                                                message: errorMessage,
+                                                message: errorMessage ?? "Unknown error description",
                                                 preferredStyle: .alert)
         
         alertController.addAction(UIAlertAction(title: "Dismiss",

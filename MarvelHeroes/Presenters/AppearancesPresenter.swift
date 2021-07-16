@@ -48,7 +48,7 @@ class AppearancesPresenter: AppearancesPresenterProtocol {
                 appearancesViewModels?.sort { $0.title < $1.title }
                 self?.view?.showAppearances(appearancesViewModels ?? [])
             } else {
-                self?.view?.showError(errorMessage ?? "Unknown error description")
+                self?.view?.showError(errorMessage)
             }
         }
     }
