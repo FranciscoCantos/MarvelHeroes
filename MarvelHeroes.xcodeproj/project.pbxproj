@@ -55,7 +55,6 @@
 		64889576268CC50E007B1E14 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6488955E268CC50E007B1E14 /* APIConfiguration.swift */; };
 		64889577268CC50E007B1E14 /* EndpointsConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6488955F268CC50E007B1E14 /* EndpointsConfiguration.swift */; };
 		64A421C826923E1700292B4E /* no-results-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 64A421C726923E1700292B4E /* no-results-animation.json */; };
-		64A421CA2692441200292B4E /* GetMoreCharactersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A421C92692441200292B4E /* GetMoreCharactersInteractor.swift */; };
 		64A421CC2692444C00292B4E /* SearchCharacterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A421CB2692444C00292B4E /* SearchCharacterInteractor.swift */; };
 		64B7711D2690443C0018954C /* MarvelApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B7711C2690443C0018954C /* MarvelApiKeys.swift */; };
 		64B7711F269047ED0018954C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B7711E269047ED0018954C /* Constants.swift */; };
@@ -132,7 +131,6 @@
 		6488955E268CC50E007B1E14 /* APIConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		6488955F268CC50E007B1E14 /* EndpointsConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointsConfiguration.swift; sourceTree = "<group>"; };
 		64A421C726923E1700292B4E /* no-results-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "no-results-animation.json"; sourceTree = "<group>"; };
-		64A421C92692441200292B4E /* GetMoreCharactersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMoreCharactersInteractor.swift; sourceTree = "<group>"; };
 		64A421CB2692444C00292B4E /* SearchCharacterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCharacterInteractor.swift; sourceTree = "<group>"; };
 		64B7711C2690443C0018954C /* MarvelApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelApiKeys.swift; sourceTree = "<group>"; };
 		64B7711E269047ED0018954C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -318,7 +316,6 @@
 				64B917182697974700AB5CCC /* GetAppearancesInteractor.swift */,
 				64B771242690CBDF0018954C /* GetCharacterInfoInteractor.swift */,
 				64889544268CC50D007B1E14 /* GetCharactersInteractor.swift */,
-				64A421C92692441200292B4E /* GetMoreCharactersInteractor.swift */,
 				64A421CB2692444C00292B4E /* SearchCharacterInteractor.swift */,
 			);
 			path = Interactors;
@@ -614,7 +611,6 @@
 				64889563268CC50E007B1E14 /* GetCharactersInteractor.swift in Sources */,
 				64B7711F269047ED0018954C /* Constants.swift in Sources */,
 				64067D4C269A1F1300B7CBDA /* LoadingViewProtocol.swift in Sources */,
-				64A421CA2692441200292B4E /* GetMoreCharactersInteractor.swift in Sources */,
 				646E6BA62697AD9700FF5FEF /* AppearanceButtonViewModel.swift in Sources */,
 				646E6BAC2697B2AD00FF5FEF /* AppearancesViewModel.swift in Sources */,
 				64A421CC2692444C00292B4E /* SearchCharacterInteractor.swift in Sources */,

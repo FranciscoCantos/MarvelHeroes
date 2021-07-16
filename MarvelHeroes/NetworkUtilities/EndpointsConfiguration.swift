@@ -11,8 +11,7 @@ import Alamofire
 // Endpoint configuration implementation.
 enum EndpointsConfiguration: APIConfiguration {
         
-    case getCharacters
-    case getMoreCharacters(offset: Int)
+    case getCharacters(offset: Int)
     case getCharacterInfo(characterId: Int)
     case searchCharacter(name: String)
     case getComics(characterId: Int, offset: Int)
@@ -24,7 +23,7 @@ enum EndpointsConfiguration: APIConfiguration {
     // HTTPMethods
     var method: HTTPMethod {
         switch self {
-        case .getCharacters, .getCharacterInfo, .getMoreCharacters, .searchCharacter,
+        case .getCharacters, .getCharacterInfo, .searchCharacter,
              .getComics, .getEvents, .getSeries, .getStories, .getStoryInfo:
             return .get
         }
@@ -33,7 +32,7 @@ enum EndpointsConfiguration: APIConfiguration {
     // Paths
     var path: String {
         switch self {
-        case .getCharacters, .getMoreCharacters, .searchCharacter:
+        case .getCharacters, .searchCharacter:
             return "/v1/public/characters"
         case .getCharacterInfo(let characterId):
             return "/v1/public/characters/\(characterId)"
@@ -56,9 +55,9 @@ enum EndpointsConfiguration: APIConfiguration {
                                  URLQueryItem(name: "apikey", value: ApiKeys.publicKey),
                                  URLQueryItem(name: "hash", value: md5HashValue), URLQueryItem(name: "limit", value: "100")]
         switch self {
-        case .getCharacters, .getCharacterInfo, .getStoryInfo:
+        case .getCharacterInfo, .getStoryInfo:
             return defaultQueryItems
-        case .getMoreCharacters(offset: let offset):
+        case .getCharacters(offset: let offset):
             defaultQueryItems.append(contentsOf: [URLQueryItem(name: "offset", value: "\(offset)")])
             return defaultQueryItems
         case .searchCharacter(name: let name):

@@ -37,11 +37,9 @@ class MainRouter: MainRouterProtocol, TopViewControllerGettableProtocol {
     /// Method that navigate to show a list of characters
     private func showCharacters() {
         let getCharactersInteractor = GetCharactersInteractor(repository: CharactersRepository())
-        let getMoreCharactersInteractor = GetMoreCharactersInteractor(repository: CharactersRepository())
         let searchCharactersInteractor = SearchCharacterInteractor(repository: CharactersRepository())
         let charactersPresenter = CharactersPresenter(router: self,
                                                       getCharactersInteractor: getCharactersInteractor,
-                                                      getMoreCharactersInteractor: getMoreCharactersInteractor,
                                                       searchCharacterInteractor: searchCharactersInteractor)
         let charactersViewController = CharactersViewController(charactersPresenter: charactersPresenter)
         charactersPresenter.view = charactersViewController

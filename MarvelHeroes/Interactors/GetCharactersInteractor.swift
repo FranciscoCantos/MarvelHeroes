@@ -13,7 +13,6 @@ protocol GetCharactersInteractorProtocol {
     func getCharacters(completion: @escaping GetCharactersCompletionBlock)
 }
 
-
 /// Interactor that get a first amounts of characters
 class GetCharactersInteractor: GetCharactersInteractorProtocol {
     private let repository: CharactersRepositoryProtocol

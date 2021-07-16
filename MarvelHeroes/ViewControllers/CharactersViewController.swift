@@ -229,13 +229,13 @@ extension CharactersViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let lastElement: Int
         if isFiltering {
-           lastElement = filteredCharacters.count - 5
+           lastElement = filteredCharacters.count - 1
         } else {
-            lastElement = charactersModel.count - 5
+            lastElement = charactersModel.count - 1
         }
         
         if indexPath.row == lastElement && isFiltering == false {
-            presenter.getMoreCharacters()
+            presenter.getCharacters()
         }
     }
 }
