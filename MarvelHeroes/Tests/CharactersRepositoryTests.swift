@@ -26,15 +26,6 @@ class CharactersRepositoryTests: XCTestCase {
         XCTAssertNotNil(repositoryError)
     }
     
-    func testGetMoreCharacters_EmptyJSONResponse() throws {
-        fakeRepository = CharactersRepositoryFake(fakeJSONName: "fake")
-        fakeRepository.getMoreCharacters { response, error in
-            self.repositoryResponse = response
-            self.repositoryError = error
-        }
-        XCTAssertNil(repositoryResponse)
-        XCTAssertNotNil(repositoryError)
-    }
     
     func testGetCharacterInfo_EmptyJSONResponse() throws {
         fakeRepository = CharactersRepositoryFake(fakeJSONName: "fake")
@@ -61,17 +52,6 @@ class CharactersRepositoryTests: XCTestCase {
     func testGetCharacters_SuccessResponse() throws {
         fakeRepository = CharactersRepositoryFake(fakeJSONName: "GetCharacters")
         fakeRepository.getCharacters { response, error in
-            self.repositoryResponse = response
-            self.repositoryError = error
-        }
-        XCTAssertNotNil(repositoryResponse)
-        XCTAssertTrue(repositoryResponse?.characters.count ?? 0 > 0)
-        XCTAssertNil(repositoryError)
-    }
-    
-    func testGetMoreCharacters_SuccessResponse() throws {
-        fakeRepository = CharactersRepositoryFake(fakeJSONName: "GetMoreCharacters")
-        fakeRepository.getMoreCharacters { response, error in
             self.repositoryResponse = response
             self.repositoryError = error
         }
@@ -111,16 +91,6 @@ class CharactersRepositoryTests: XCTestCase {
     func testGetCharacters_BadResponse() throws {
         fakeRepository = CharactersRepositoryFake(fakeJSONName: "GetCharacters_bad")
         fakeRepository.getCharacters { response, error in
-            self.repositoryResponse = response
-            self.repositoryError = error
-        }
-        XCTAssertNil(repositoryResponse)
-        XCTAssertNotNil(repositoryError)
-    }
-    
-    func testGetMoreCharacters_BadResponse() throws {
-        fakeRepository = CharactersRepositoryFake(fakeJSONName: "GetMoreCharacters_bad")
-        fakeRepository.getMoreCharacters { response, error in
             self.repositoryResponse = response
             self.repositoryError = error
         }

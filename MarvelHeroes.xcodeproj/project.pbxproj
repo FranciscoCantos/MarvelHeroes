@@ -12,12 +12,10 @@
 		64067D4C269A1F1300B7CBDA /* LoadingViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64067D4B269A1F1300B7CBDA /* LoadingViewProtocol.swift */; };
 		64067D52269D92A900B7CBDA /* CharactersRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64067D51269D92A900B7CBDA /* CharactersRepositoryTests.swift */; };
 		64067D60269DB0A300B7CBDA /* GetCharacterInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 64067D54269DAE4900B7CBDA /* GetCharacterInfo.json */; };
-		64067D61269DB0A300B7CBDA /* GetMoreCharacters.json in Resources */ = {isa = PBXBuildFile; fileRef = 64067D56269DAE4900B7CBDA /* GetMoreCharacters.json */; };
 		64067D62269DB0A300B7CBDA /* GetCharacters.json in Resources */ = {isa = PBXBuildFile; fileRef = 64067D57269DAE4900B7CBDA /* GetCharacters.json */; };
 		64067D63269DB0A300B7CBDA /* SearchCharacter.json in Resources */ = {isa = PBXBuildFile; fileRef = 64067D55269DAE4900B7CBDA /* SearchCharacter.json */; };
 		64067D68269DB49A00B7CBDA /* GetCharacters_bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 64067D64269DB49900B7CBDA /* GetCharacters_bad.json */; };
 		64067D69269DB49A00B7CBDA /* SearchCharacter_bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 64067D65269DB49900B7CBDA /* SearchCharacter_bad.json */; };
-		64067D6A269DB49A00B7CBDA /* GetMoreCharacters_bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 64067D66269DB49900B7CBDA /* GetMoreCharacters_bad.json */; };
 		64067D6B269DB49A00B7CBDA /* GetCharacterInfo_bad.json in Resources */ = {isa = PBXBuildFile; fileRef = 64067D67269DB49900B7CBDA /* GetCharacterInfo_bad.json */; };
 		64067D6D269DBC0200B7CBDA /* AppearancesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64067D6C269DBC0200B7CBDA /* AppearancesRepositoryTests.swift */; };
 		64067D70269F26F700B7CBDA /* GetAppearances.json in Resources */ = {isa = PBXBuildFile; fileRef = 64067D6E269F26F700B7CBDA /* GetAppearances.json */; };
@@ -86,11 +84,9 @@
 		64067D51269D92A900B7CBDA /* CharactersRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRepositoryTests.swift; sourceTree = "<group>"; };
 		64067D54269DAE4900B7CBDA /* GetCharacterInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetCharacterInfo.json; sourceTree = "<group>"; };
 		64067D55269DAE4900B7CBDA /* SearchCharacter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SearchCharacter.json; sourceTree = "<group>"; };
-		64067D56269DAE4900B7CBDA /* GetMoreCharacters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetMoreCharacters.json; sourceTree = "<group>"; };
 		64067D57269DAE4900B7CBDA /* GetCharacters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetCharacters.json; sourceTree = "<group>"; };
 		64067D64269DB49900B7CBDA /* GetCharacters_bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetCharacters_bad.json; sourceTree = "<group>"; };
 		64067D65269DB49900B7CBDA /* SearchCharacter_bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SearchCharacter_bad.json; sourceTree = "<group>"; };
-		64067D66269DB49900B7CBDA /* GetMoreCharacters_bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetMoreCharacters_bad.json; sourceTree = "<group>"; };
 		64067D67269DB49900B7CBDA /* GetCharacterInfo_bad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetCharacterInfo_bad.json; sourceTree = "<group>"; };
 		64067D6C269DBC0200B7CBDA /* AppearancesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearancesRepositoryTests.swift; sourceTree = "<group>"; };
 		64067D6E269F26F700B7CBDA /* GetAppearances.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetAppearances.json; sourceTree = "<group>"; };
@@ -202,8 +198,6 @@
 				64067D54269DAE4900B7CBDA /* GetCharacterInfo.json */,
 				64067D64269DB49900B7CBDA /* GetCharacters_bad.json */,
 				64067D57269DAE4900B7CBDA /* GetCharacters.json */,
-				64067D66269DB49900B7CBDA /* GetMoreCharacters_bad.json */,
-				64067D56269DAE4900B7CBDA /* GetMoreCharacters.json */,
 				64067D72269F2A5D00B7CBDA /* GetStories_bad.json */,
 				64067D6F269F26F700B7CBDA /* GetStories.json */,
 				64067D65269DB49900B7CBDA /* SearchCharacter_bad.json */,
@@ -503,7 +497,6 @@
 				64067D74269F2A5D00B7CBDA /* GetStories_bad.json in Resources */,
 				64067D75269F2A5D00B7CBDA /* GetAppearances_bad.json in Resources */,
 				6488956E268CC50E007B1E14 /* CharacterDetailViewController.xib in Resources */,
-				64067D6A269DB49A00B7CBDA /* GetMoreCharacters_bad.json in Resources */,
 				64B771212690BDF90018954C /* HoustonComics.ttf in Resources */,
 				64B9171726962B2D00AB5CCC /* ItemButtonView.xib in Resources */,
 				64067D60269DB0A300B7CBDA /* GetCharacterInfo.json in Resources */,
@@ -514,7 +507,6 @@
 				646E6BAE2697B78A00FF5FEF /* AppearancesViewController.xib in Resources */,
 				64A421C826923E1700292B4E /* no-results-animation.json in Resources */,
 				64889506268CC2A4007B1E14 /* Assets.xcassets in Resources */,
-				64067D61269DB0A300B7CBDA /* GetMoreCharacters.json in Resources */,
 				64067D71269F26F700B7CBDA /* GetStories.json in Resources */,
 				6488956F268CC50E007B1E14 /* CharactersTableViewCell.xib in Resources */,
 			);

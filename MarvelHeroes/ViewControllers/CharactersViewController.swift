@@ -12,7 +12,6 @@ import Gifu
 protocol CharactersViewControllerProtocol: AnyObject, LoadingViewProtocol {
     func showCharacters(_ characters: [CharacterListViewModel])
     func showSearchedCharacters(_ characters: [CharacterListViewModel])
-    func appendMoreCharacters(_ characters:[CharacterListViewModel])
     func showError(_ errorMessage: String?)
 }
 
@@ -119,17 +118,6 @@ extension CharactersViewController: CharactersViewControllerProtocol {
         self.charactersModel = charactersModel
         
         self.tableView.isHidden = false
-        self.tableView.reloadData()
-    }
-    
-    /// Show more characters retrieved from API
-    /// - Parameter characters: Characters info retrieved
-    func appendMoreCharacters(_ characters: [CharacterListViewModel]) {
-        characters.forEach { character in
-            if !charactersModel.contains(where: { $0.id == character.id }) {
-                self.charactersModel.append(character)
-            }
-        }
         self.tableView.reloadData()
     }
     
