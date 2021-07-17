@@ -99,7 +99,7 @@ extension AppearancesViewController: AppearancesViewControllerProtocol {
     
 }
 
-extension AppearancesViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension AppearancesViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return appearancesArray?.count ?? 0
     }
@@ -116,6 +116,13 @@ extension AppearancesViewController: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = appearancesArray?[indexPath.row].id else { return }
         presenter.navigateToAppearanceDetail(item)
+    }
+        
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let viewHeight = view.frame.size.height
+        let viewWidth = view.frame.size.width
+        
+        return CGSize(width: viewWidth * 0.92, height: viewHeight * 0.9)
     }
 }
 
