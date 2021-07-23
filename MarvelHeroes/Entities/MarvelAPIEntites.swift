@@ -91,7 +91,6 @@ struct CharactersResponse: Codable {
 struct Character: Codable {
     let id: Int
     let name, characterDescription: String
-    let modified: String
     let thumbnail: Thumbnail
     let resourceURI: String
     let comics: Comics
@@ -121,7 +120,13 @@ struct Character: Codable {
     enum CodingKeys: String, CodingKey {
         case id, name
         case characterDescription = "description"
-        case modified, thumbnail, resourceURI, comics, series, stories, events, urls
+        case thumbnail, resourceURI, comics, series, stories, events, urls
+    }
+}
+
+extension Character: Equatable {
+    static func ==(lhs: Character, rhs: Character) -> Bool {
+        return lhs.id == rhs.id
     }
 }
 
