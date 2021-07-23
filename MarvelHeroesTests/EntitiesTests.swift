@@ -54,7 +54,6 @@ class EntityTests: XCTestCase {
         
         let character = Character(id: 25, name: "characterName",
                                   characterDescription: "characterName",
-                                  modified: "characterName",
                                   thumbnail: thumnail,
                                   resourceURI: "characterName",
                                   comics: comics,

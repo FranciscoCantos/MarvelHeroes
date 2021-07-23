@@ -5,6 +5,7 @@
 //  Created by Francisco Cantos
 //
 
+
 import Foundation
 
 typealias GetCharactersCompletionBlock = (_ characters: [Character]?, _ errorMessage: String?) -> Void

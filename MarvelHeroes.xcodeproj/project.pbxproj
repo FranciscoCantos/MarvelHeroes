@@ -62,6 +62,7 @@
 		64B917192697974700AB5CCC /* GetAppearancesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B917182697974700AB5CCC /* GetAppearancesInteractor.swift */; };
 		64B91721269797BC00AB5CCC /* AppearancesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B91720269797BC00AB5CCC /* AppearancesRepository.swift */; };
 		64CB703826982E5300B62E6C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CB703726982E5300B62E6C /* Extensions.swift */; };
+		64DC7F4226A488F600BB488C /* GetCharactersInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DC7F4126A488F600BB488C /* GetCharactersInteractorTests.swift */; };
 		64E87ECF26934F31009F37AF /* MarvelGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 64E87ECE26934F31009F37AF /* MarvelGif.gif */; };
 		64E87ED126935A80009F37AF /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E87ED026935A80009F37AF /* CharacterDetailViewModel.swift */; };
 		8A26047C78D9347772BB233B /* Pods_MarvelHeroes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7EAC2F80B93D6CDEC625629 /* Pods_MarvelHeroes.framework */; };
@@ -136,6 +137,7 @@
 		64B917182697974700AB5CCC /* GetAppearancesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppearancesInteractor.swift; sourceTree = "<group>"; };
 		64B91720269797BC00AB5CCC /* AppearancesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearancesRepository.swift; sourceTree = "<group>"; };
 		64CB703726982E5300B62E6C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		64DC7F4126A488F600BB488C /* GetCharactersInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersInteractorTests.swift; sourceTree = "<group>"; };
 		64E87ECE26934F31009F37AF /* MarvelGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = MarvelGif.gif; sourceTree = "<group>"; };
 		64E87ED026935A80009F37AF /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		6927C67700D33854FD6326E1 /* Pods-MarvelHeroes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelHeroes.release.xcconfig"; path = "Target Support Files/Pods-MarvelHeroes/Pods-MarvelHeroes.release.xcconfig"; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 				64067D6C269DBC0200B7CBDA /* AppearancesRepositoryTests.swift */,
 				64067D51269D92A900B7CBDA /* CharactersRepositoryTests.swift */,
 				64067D82269F325300B7CBDA /* EntitiesTests.swift */,
+				64DC7F4126A488F600BB488C /* GetCharactersInteractorTests.swift */,
 			);
 			path = MarvelHeroesTests;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				649A95CE26A1A1DA0081D7C9 /* AppearancesRepositoryTests.swift in Sources */,
 				649A95D026A1A1DA0081D7C9 /* CharactersRepositoryTests.swift in Sources */,
 				649A95CF26A1A1DA0081D7C9 /* EntitiesTests.swift in Sources */,
+				64DC7F4226A488F600BB488C /* GetCharactersInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
