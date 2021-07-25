@@ -76,6 +76,12 @@ struct Appearance: Codable {
     }
 }
 
+extension Appearance: Equatable {
+    static func ==(lhs: Appearance, rhs: Appearance) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+
 // MARK: - CharactersResponse
 struct CharactersResponse: Codable {
     let offset, limit, total, count: Int

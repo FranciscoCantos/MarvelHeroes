@@ -90,7 +90,9 @@ class AppearancesRepository: AppearancesRepositoryProtocol {
 // Fake repository implementation used for testing. Get appearances responses from JSON file.
 class AppearancesRepositoryFake: AppearancesRepositoryProtocol {
     private let fakeJSONName: String
-
+    var fakeResponse: [Appearance]?
+    var getStoriesCalled: Bool = false
+    
     init(fakeJSONName: String) {
         self.fakeJSONName = fakeJSONName
     }
@@ -111,6 +113,10 @@ class AppearancesRepositoryFake: AppearancesRepositoryProtocol {
             completion(nil, "Can't decode JSON response")
             return
         }
+        fakeResponse = response.data.results
+        if apperanceType == .stories {
+            getStoriesInfo(storyId: response.data.results.first?.id ?? 0) { _, _ in }
+        }
         completion(response.data.results, nil)
     }
     
@@ -123,6 +129,7 @@ class AppearancesRepositoryFake: AppearancesRepositoryProtocol {
             completion(nil, "Can't decode JSON response")
             return
         }
+        getStoriesCalled = true
         completion(response.data.results.first, nil)
     }
 }

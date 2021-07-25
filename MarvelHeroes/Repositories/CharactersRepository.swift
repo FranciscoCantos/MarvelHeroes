@@ -81,9 +81,10 @@ class CharactersRepository: CharactersRepositoryProtocol {
 
 }
 
-// Fake repository implementation used for testing. Get characters responses from JSON file.
+// Fake repository implementation used for testing. Get characters responses from JSON file
 class CharactersRepositoryFake: CharactersRepositoryProtocol {
     private let fakeJSONName: String
+    var fakeResponse: CharactersResponse?
 
     init(fakeJSONName: String) {
         self.fakeJSONName = fakeJSONName
@@ -105,6 +106,7 @@ class CharactersRepositoryFake: CharactersRepositoryProtocol {
             completion(nil, "Can't decode JSON response")
             return
         }
+        fakeResponse = response.data
         completion(response.data, nil)
     }
     
@@ -117,6 +119,7 @@ class CharactersRepositoryFake: CharactersRepositoryProtocol {
             completion(nil, "Can't decode JSON response")
             return
         }
+        fakeResponse = response.data
         completion(response.data, nil)
     }
     
@@ -129,6 +132,7 @@ class CharactersRepositoryFake: CharactersRepositoryProtocol {
             completion(nil, "Can't decode JSON response")
             return
         }
+        fakeResponse = response.data
         completion(response.data, nil)
     }
 }
