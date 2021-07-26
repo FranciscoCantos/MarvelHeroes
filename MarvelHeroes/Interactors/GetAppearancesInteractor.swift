@@ -10,7 +10,7 @@ import Foundation
 typealias GetAppearancesCompletionBlock = (_ appearances: [Appearance]?, _ errorMessage: String?) -> Void
 
 protocol GetAppearancesInteractorProtocol {
-    func getAppearances(characterId: Int, apperanceType: AppearanceType, completion: @escaping GetAppearancesCompletionBlock)
+    func getAppearances(characterId: Int, appearanceType: AppearanceType, completion: @escaping GetAppearancesCompletionBlock)
 }
 
 
@@ -27,12 +27,12 @@ class GetAppearancesInteractor: GetAppearancesInteractorProtocol {
     /// Retrieves the appearances of a certain type of the given character
     /// - Parameters:
     ///   - characterId: Id of the character to get the appearances
-    ///   - apperanceType: The type of the appearance
+    ///   - appearanceType: The type of the appearance
     ///   - completion: Retrieves all the appearances info of a type
-    func getAppearances(characterId: Int, apperanceType: AppearanceType, completion: @escaping GetAppearancesCompletionBlock) {
-        repository.getAppearances(characterId: characterId, apperanceType: apperanceType) { (response, errorMessage) in
+    func getAppearances(characterId: Int, appearanceType: AppearanceType, completion: @escaping GetAppearancesCompletionBlock) {
+        repository.getAppearances(characterId: characterId, appearanceType: appearanceType) { (response, errorMessage) in
             if let appearancesResponse = response {
-                if apperanceType == .stories {
+                if appearanceType == .stories {
                     completion(self.getStoriesInfo(stories: appearancesResponse), nil)
                 }
                 completion(appearancesResponse, nil)

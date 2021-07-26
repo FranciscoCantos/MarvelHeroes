@@ -87,7 +87,7 @@ class CharacterDetailPresenterTests: XCTestCase {
     }
     
     func test_NavigateToAppearances() {
-        presenter.navigateToAppearances(characterId: characterId, appearanceType: .comics)
+        presenter.navigateToAppearances(characterId: 0, appearanceType: .comics)
         XCTAssertTrue(mockRouter.navigateToAppearancesCalled)
     }
     

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol AppearancesPresenterProtocol {
-    func getAppearances(characterId: Int, apperanceType: AppearanceType)
+    func getAppearances(characterId: Int, appearanceType: AppearanceType)
     func navigateToAppearanceDetail(_ appearanceId : Int)
 }
 
@@ -30,29 +30,41 @@ class AppearancesPresenter: AppearancesPresenterProtocol {
         self.router = router
     }
     
-    
     /// Get all the appearances of a certain type of a character
     /// - Parameters:
     ///   - characterId: The ID of the character to get appearances
-    ///   - apperanceType: The type of the appearances to get
-    func getAppearances(characterId: Int, apperanceType: AppearanceType) {
+    ///   - appearanceType: The type of the appearances to get
+    func getAppearances(characterId: Int, appearanceType: AppearanceType) {
         view?.startLoading()
         getAppearancesInteractor.getAppearances(characterId: characterId,
-                                                apperanceType: apperanceType){ [weak self] (retrievedAppearances, errorMessage) in
+                                                appearanceType: appearanceType){ [weak self] (retrievedAppearances, errorMessage) in
             self?.view?.stopLoading()
-            if let appearances = retrievedAppearances {
-                self?.appearancesArray = appearances.filter { !$0.title.isEmpty }
-                var appearancesViewModels = self?.appearancesArray.compactMap {
-                    AppearanceToAppearancesViewModelMapper($0).map()
-                }
-                appearancesViewModels?.sort { $0.title < $1.title }
-                self?.view?.showAppearances(appearancesViewModels ?? [])
-            } else {
-                self?.view?.showError(errorMessage)
-            }
+            self?.manageGetAppearancesResponse(retrievedAppearances, errorMessage)
         }
     }
     
+    /// Method that manages the response from network, filter and sort appearances and build view models to show
+    /// - Parameters:
+    ///   - retrievedAppearances: Appearances retrieved from interactor
+    ///   - errorMessage: Error message to show if needed
+    func manageGetAppearancesResponse(_ retrievedAppearances: [Appearance]?, _ errorMessage: String?) {
+        if let appearances = retrievedAppearances {
+            appearancesArray = appearances.filter { !$0.title.isEmpty }
+            view?.showAppearances(buildAppearancesViewModels())
+        } else {
+            view?.showError(errorMessage)
+        }
+    }
+    
+    /// Method to build Appearances view model to show in the view
+    /// - Returns: Appearances view model array
+    func buildAppearancesViewModels() -> [AppearancesViewModel] {
+        var appearancesViewModels = appearancesArray.compactMap {
+            AppearanceToAppearancesViewModelMapper($0).map()
+        }
+        appearancesViewModels.sort { $0.title < $1.title }
+        return appearancesViewModels
+    }
     
     /// Navigation method to show a web from de Marvel website to show more details of the appearance.
     /// - Parameter appearanceId: The id of the appearance to show details
@@ -60,7 +72,7 @@ class AppearancesPresenter: AppearancesPresenterProtocol {
         appearancesArray.forEach {
             if ($0.id == appearanceId) {
                 guard let url = $0.getDetailsUrl() else { return }
-                UIApplication.shared.open(url)
+                router.navigateToURL(url)
             }
         }
     }

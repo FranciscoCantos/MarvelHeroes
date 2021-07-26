@@ -18,7 +18,7 @@ class AppearancesRepositoryTests: XCTestCase {
     //Mark - Empty Response
     func testGetAppearances_EmptyJSONResponse() throws {
         fakeRepository = AppearancesRepositoryFake(fakeJSONName: "fake")
-        fakeRepository.getAppearances(characterId: 0, apperanceType: .comics) { response, error in
+        fakeRepository.getAppearances(characterId: 0, appearanceType: .comics) { response, error in
             self.appearanceRepositoryResponse = response
             self.repositoryError = error
         }
@@ -40,7 +40,7 @@ class AppearancesRepositoryTests: XCTestCase {
     
     func testGetAppearances_SuccessResponse() throws {
         fakeRepository = AppearancesRepositoryFake(fakeJSONName: "GetAppearances")
-        fakeRepository.getAppearances(characterId: 0, apperanceType: .comics) { response, error in
+        fakeRepository.getAppearances(characterId: 0, appearanceType: .comics) { response, error in
             self.appearanceRepositoryResponse = response
             self.repositoryError = error
         }
@@ -65,7 +65,7 @@ class AppearancesRepositoryTests: XCTestCase {
 
     func testGetAppearances_BadResponse() throws {
         fakeRepository = AppearancesRepositoryFake(fakeJSONName: "GetAppearances_bad")
-        fakeRepository.getAppearances(characterId: 0, apperanceType: .comics) { response, error in
+        fakeRepository.getAppearances(characterId: 0, appearanceType: .comics) { response, error in
             self.appearanceRepositoryResponse = response
             self.repositoryError = error
         }

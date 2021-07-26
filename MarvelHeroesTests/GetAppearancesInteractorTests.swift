@@ -18,7 +18,7 @@ class GetAppearancesInteractorTests: XCTestCase {
         loadGetAppearancesSuccess()
         let fakeRepositoryResponse = fakeRepository.fakeResponse
 
-        interactor.getAppearances(characterId: characterId, apperanceType: appearanceType) { repositoryResponse, errorString in
+        interactor.getAppearances(characterId: characterId, appearanceType: appearanceType) { repositoryResponse, errorString in
             XCTAssertEqual(repositoryResponse, fakeRepositoryResponse)
             XCTAssertNil(errorString)
         }
@@ -28,7 +28,7 @@ class GetAppearancesInteractorTests: XCTestCase {
         loadGetAppearancesError()
         let fakeRepositoryResponse = fakeRepository.fakeResponse
         
-        interactor.getAppearances(characterId: characterId, apperanceType: appearanceType) { repositoryResponse, errorString in
+        interactor.getAppearances(characterId: characterId, appearanceType: appearanceType) { repositoryResponse, errorString in
             XCTAssertEqual(repositoryResponse, fakeRepositoryResponse)
             XCTAssertNotNil(errorString)
         }
@@ -44,12 +44,12 @@ class GetAppearancesInteractorTests: XCTestCase {
     private func loadGetAppearancesSuccess() {
         fakeRepository = AppearancesRepositoryFake(fakeJSONName: "GetAppearances")
         interactor = GetAppearancesInteractor(repository: fakeRepository)
-        fakeRepository.getAppearances(characterId: characterId, apperanceType: appearanceType) { _,_ in }
+        fakeRepository.getAppearances(characterId: characterId, appearanceType: appearanceType) { _,_ in }
     }
     
     private func loadGetAppearancesError() {
         fakeRepository = AppearancesRepositoryFake(fakeJSONName: "GetAppearances_bad")
         interactor = GetAppearancesInteractor(repository: fakeRepository)
-        fakeRepository.getAppearances(characterId: characterId, apperanceType: appearanceType) { _,_ in }
+        fakeRepository.getAppearances(characterId: characterId, appearanceType: appearanceType) { _,_ in }
     }
 }

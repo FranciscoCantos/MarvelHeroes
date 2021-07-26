@@ -53,6 +53,7 @@
 		648B6D1026AD786C005DBD8A /* GetAppearancesInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648B6D0F26AD786C005DBD8A /* GetAppearancesInteractorTests.swift */; };
 		648B6D1226AD81E3005DBD8A /* CharactersPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648B6D1126AD81E3005DBD8A /* CharactersPresenterTests.swift */; };
 		648BA55B26AEF6A2006F974B /* CharacterDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648BA55A26AEF6A2006F974B /* CharacterDetailPresenterTests.swift */; };
+		648BA55D26AF0D9D006F974B /* AppearancesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648BA55C26AF0D9D006F974B /* AppearancesPresenterTests.swift */; };
 		649A95CE26A1A1DA0081D7C9 /* AppearancesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64067D6C269DBC0200B7CBDA /* AppearancesRepositoryTests.swift */; };
 		649A95CF26A1A1DA0081D7C9 /* EntitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64067D82269F325300B7CBDA /* EntitiesTests.swift */; };
 		649A95D026A1A1DA0081D7C9 /* CharactersRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64067D51269D92A900B7CBDA /* CharactersRepositoryTests.swift */; };
@@ -135,6 +136,7 @@
 		648B6D0F26AD786C005DBD8A /* GetAppearancesInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAppearancesInteractorTests.swift; sourceTree = "<group>"; };
 		648B6D1126AD81E3005DBD8A /* CharactersPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersPresenterTests.swift; sourceTree = "<group>"; };
 		648BA55A26AEF6A2006F974B /* CharacterDetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPresenterTests.swift; sourceTree = "<group>"; };
+		648BA55C26AF0D9D006F974B /* AppearancesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearancesPresenterTests.swift; sourceTree = "<group>"; };
 		649A95C426A1A1930081D7C9 /* MarvelHeroesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelHeroesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64A421C726923E1700292B4E /* no-results-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "no-results-animation.json"; sourceTree = "<group>"; };
 		64A421CB2692444C00292B4E /* SearchCharacterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCharacterInteractor.swift; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 			children = (
 				64067D6C269DBC0200B7CBDA /* AppearancesRepositoryTests.swift */,
 				648BA55A26AEF6A2006F974B /* CharacterDetailPresenterTests.swift */,
+				648BA55C26AF0D9D006F974B /* AppearancesPresenterTests.swift */,
 				648B6D1126AD81E3005DBD8A /* CharactersPresenterTests.swift */,
 				64067D51269D92A900B7CBDA /* CharactersRepositoryTests.swift */,
 				64067D82269F325300B7CBDA /* EntitiesTests.swift */,
@@ -631,6 +634,7 @@
 				648074A126AB24E300692847 /* GetCharacterInfoInteractorTests.swift in Sources */,
 				648BA55B26AEF6A2006F974B /* CharacterDetailPresenterTests.swift in Sources */,
 				64DC7F4226A488F600BB488C /* GetCharactersInteractorTests.swift in Sources */,
+				648BA55D26AF0D9D006F974B /* AppearancesPresenterTests.swift in Sources */,
 				648B6D1026AD786C005DBD8A /* GetAppearancesInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

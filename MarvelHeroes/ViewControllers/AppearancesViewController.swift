@@ -41,7 +41,7 @@ class AppearancesViewController: UIViewController {
         
         configureCollectionView()
         configureLoadingView()
-        presenter.getAppearances(characterId: characterId, apperanceType: appearanceType)
+        presenter.getAppearances(characterId: characterId, appearanceType: appearanceType)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,7 +91,7 @@ extension AppearancesViewController: AppearancesViewControllerProtocol {
         }))
         
         alertController.addAction(UIAlertAction(title: "Retry", style: .default, handler: { action -> Void in
-            self.presenter.getAppearances(characterId: self.characterId, apperanceType: self.appearanceType)
+            self.presenter.getAppearances(characterId: self.characterId, appearanceType: self.appearanceType)
         }))
         
         present(alertController, animated: true, completion: nil)

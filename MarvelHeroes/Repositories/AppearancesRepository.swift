@@ -12,7 +12,7 @@ typealias AppearancesResponseCompletionBlock = (_ appearancesResponse: [Appearan
 typealias StoryInfoResponseCompletionBlock = (_ storyResponse: Story?, _ errorMessage: String?) -> Void
 
 protocol AppearancesRepositoryProtocol {
-    func getAppearances(characterId: Int, apperanceType: AppearanceType, completion: @escaping AppearancesResponseCompletionBlock)
+    func getAppearances(characterId: Int, appearanceType: AppearanceType, completion: @escaping AppearancesResponseCompletionBlock)
     func getStoriesInfo(storyId: Int, completion: @escaping StoryInfoResponseCompletionBlock)
 
 }
@@ -25,11 +25,11 @@ class AppearancesRepository: AppearancesRepositoryProtocol {
     /// Method that gets all the appearances of a character by type
     /// - Parameters:
     ///   - characterId: The ID of the character to get appearances
-    ///   - apperanceType: The appearances type to get
+    ///   - appearanceType: The appearances type to get
     ///   - completion: Gets all the appearances of a character
-    func getAppearances(characterId: Int, apperanceType: AppearanceType, completion: @escaping AppearancesResponseCompletionBlock) {
+    func getAppearances(characterId: Int, appearanceType: AppearanceType, completion: @escaping AppearancesResponseCompletionBlock) {
         repeat {
-            let endpointConfig = getEndpointConfiguration(characterId: characterId, appearanceType: apperanceType)
+            let endpointConfig = getEndpointConfiguration(characterId: characterId, appearanceType: appearanceType)
             _ = try? AF.request(endpointConfig.asURLRequest())
                 .validate()
                 .responseDecodable { (response: DataResponse<MarvelItemsAPIResponse,AFError>) in
@@ -70,7 +70,7 @@ class AppearancesRepository: AppearancesRepositoryProtocol {
     /// Private method to get the endpoint configuration for the different types of stories
     /// - Parameters:
     ///   - characterId: The ID of the character to get appearances
-    ///   - apperanceType: The appearances type to get
+    ///   - appearanceType: The appearances type to get
     /// - Returns: The needed configuration.
     private func getEndpointConfiguration(characterId: Int, appearanceType: AppearanceType) -> EndpointsConfiguration {
         switch appearanceType {
@@ -104,7 +104,7 @@ class AppearancesRepositoryFake: AppearancesRepositoryProtocol {
         return NSData(contentsOf: URL(fileURLWithPath: path))
     }
     
-    func getAppearances(characterId: Int, apperanceType: AppearanceType, completion: @escaping AppearancesResponseCompletionBlock) {
+    func getAppearances(characterId: Int, appearanceType: AppearanceType, completion: @escaping AppearancesResponseCompletionBlock) {
         guard let data = getDataFromFakeJson() else {
             completion(nil, "Can't find \(fakeJSONName).json file")
             return
@@ -114,7 +114,7 @@ class AppearancesRepositoryFake: AppearancesRepositoryProtocol {
             return
         }
         fakeResponse = response.data.results
-        if apperanceType == .stories {
+        if appearanceType == .stories {
             getStoriesInfo(storyId: response.data.results.first?.id ?? 0) { _, _ in }
         }
         completion(response.data.results, nil)
