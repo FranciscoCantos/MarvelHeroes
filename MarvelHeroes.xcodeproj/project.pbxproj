@@ -387,9 +387,9 @@
 		649A95C526A1A1930081D7C9 /* MarvelHeroesTests */ = {
 			isa = PBXGroup;
 			children = (
+				648BA55C26AF0D9D006F974B /* AppearancesPresenterTests.swift */,
 				64067D6C269DBC0200B7CBDA /* AppearancesRepositoryTests.swift */,
 				648BA55A26AEF6A2006F974B /* CharacterDetailPresenterTests.swift */,
-				648BA55C26AF0D9D006F974B /* AppearancesPresenterTests.swift */,
 				648B6D1126AD81E3005DBD8A /* CharactersPresenterTests.swift */,
 				64067D51269D92A900B7CBDA /* CharactersRepositoryTests.swift */,
 				64067D82269F325300B7CBDA /* EntitiesTests.swift */,
