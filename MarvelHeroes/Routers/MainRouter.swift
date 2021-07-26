@@ -11,6 +11,7 @@ import UIKit
 protocol MainRouterProtocol {
     func navigateToCharacterDetail(_ characterId: Int)
     func navigateToAppearances(characterId: Int, appearanceType: AppearanceType)
+    func navigateToURL(_ url: URL)
 }
 
 /// Router to manage all the navigations of the app
@@ -77,5 +78,11 @@ class MainRouter: MainRouterProtocol, TopViewControllerGettableProtocol {
                                                                   appearanceType: appearanceType)
         appearancesPresenter.view = appearancesViewController
         topNavController?.present(appearancesViewController, animated: true)
+    }
+    
+    /// Method that navigates to a given url
+    /// - Parameter url: URL needed to navigate
+    func navigateToURL(_ url: URL) {
+        UIApplication.shared.open(url)
     }
 }

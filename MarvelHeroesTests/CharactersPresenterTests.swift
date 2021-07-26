@@ -39,18 +39,20 @@ class CharactersPresenterTests: XCTestCase {
     }
     
     private class MainRouterMock: MainRouterProtocol {
+        var navigateToURLCalled = false
         var navigateToCharacterDetailCalled = false
         var navigateToAppearancesCalled = false
         
         func navigateToCharacterDetail(_ characterId: Int) { navigateToCharacterDetailCalled = true }
         func navigateToAppearances(characterId: Int, appearanceType: AppearanceType) { navigateToAppearancesCalled = true }
+        func navigateToURL(_ url: URL) { navigateToURLCalled = true }
     }
     
     private var mockRouter: MainRouterMock!
     private var mockGetCharactersInteractor: GetCharactersInteractorMock!
     private var mockSearchCharacterInteractor: SearchCharacterInteractorMock!
-    private var presenter: CharactersPresenter!
     private var mockView: CharactersViewControllerMock!
+    private var presenter: CharactersPresenter!
     
     override func setUp() {
         super.setUp()
@@ -98,6 +100,23 @@ class CharactersPresenterTests: XCTestCase {
         presenter.manageCharactersResponse([], nil)
         XCTAssertEqual(presenter.charactersArray, [])
         XCTAssertTrue(mockView.showCharactersCalled)
+    }
+    
+    func test_ManageSearchCharactersResponse() {
+        presenter.manageSearchCharactersResponse(buildCharactersToTest(), nil)
+        XCTAssertTrue(mockView.showSearchedCharactersCalled)
+    }
+    
+    func test_ManageSearchCharactersResponseError() {
+        presenter.manageSearchCharactersResponse(nil, "Error")
+        XCTAssertEqual(presenter.charactersArray, [])
+        XCTAssertTrue(mockView.showErrorCalled)
+    }
+    
+    func test_ManageSearchCharactersResponseEmpty() {
+        presenter.manageSearchCharactersResponse([], nil)
+        XCTAssertEqual(presenter.charactersArray, [])
+        XCTAssertTrue(mockView.showSearchedCharactersCalled)
     }
     
     func test_BuildCharacterViewModels() {
